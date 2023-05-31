@@ -78,7 +78,7 @@ class User(AbstractUser):
         help_text='Фамилия пользователя'
     )
     confirmation_code = models.CharField(
-        'код подтверждения',
+        verbose_name='код подтверждения',
         max_length=255,
         null=True,
         blank=False,
@@ -144,6 +144,7 @@ class Genre(models.Model):
     )
 
     class Meta:
+        ordering = ['name']
         verbose_name = 'Жанр'
         verbose_name_plural = 'Жанры'
 
@@ -186,6 +187,7 @@ class Title(models.Model):
     )
 
     class Meta:
+        ordering = ['-year']
         verbose_name = 'Произведение'
         verbose_name_plural = 'Произведения'
 
@@ -224,6 +226,7 @@ class Review(CreatedModel):
     )
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
         constraints = [
@@ -254,5 +257,6 @@ class Comment(CreatedModel):
     )
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
