@@ -31,6 +31,7 @@ class SignUp(APIView):
     """
     Регистрация.
     """
+    # https://postimg.cc/CnT0vbq9
 
     permission_classes = (permissions.AllowAny,)
 
@@ -80,7 +81,6 @@ class UserViewSet(viewsets.ModelViewSet):
     filter_backends = (SearchFilter,)
     lookup_field = 'username'
     search_fields = ('username',)
-    http_method_names = ['get', 'post', 'head', 'patch', 'delete']
 
     @action(
         detail=False, methods=['get', 'patch'],
