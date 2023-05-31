@@ -81,6 +81,7 @@ class UserViewSet(viewsets.ModelViewSet):
     filter_backends = (SearchFilter,)
     lookup_field = 'username'
     search_fields = ('username',)
+    # без http_method_names не проходим тесты
     http_method_names = ['get', 'post', 'head', 'patch', 'delete']
 
     @action(
