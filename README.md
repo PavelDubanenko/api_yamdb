@@ -96,12 +96,24 @@ python manage.py runserver
 ```
 POST /api/v1/auth/signup/
 ```
+```json
+{
+    "username": "admin", 
+    "password": "admin" 
+}  
+``` 
 
 Получение JWT-токена:
 
 ```
 POST /api/v1/auth/token/
 ```
+```json
+{
+    "username": "admin", 
+    "confirmation_code": "token" 
+}  
+``` 
 
 ### Примеры работы с API для авторизованных пользователей
 
